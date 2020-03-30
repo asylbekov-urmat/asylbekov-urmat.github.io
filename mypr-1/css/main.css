@@ -1,0 +1,389 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #95f1fb;
+}
+.arrowUp {
+    position: fixed;
+    bottom: 5%;
+    right: 3%;
+    color: rgb(255, 255, 255);
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(130deg, #95f1fb 50%, #770909 50%);
+    background-size: 300%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 50px;
+    border-radius: 5px;
+    transition: .5s;
+}
+.arrowUp:hover {
+    background-position: 100% 0;
+}
+ul, li {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+.menu-bar {
+    margin: 0 auto;
+    height: 65px;
+    color: #212121;
+    padding: 20px 0;
+    
+}
+.menu__item {
+    margin-left: 50px;
+}
+.menu__item a {
+    color: #212121;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.menu__item a:hover {
+    text-decoration: none;
+    color: rgb(169, 168, 168);
+    border-bottom: 1px solid ;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.menu {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 999;
+    
+}
+.logo {
+    width: 150px;
+}
+/* ____ШАПКА____ */
+.header {
+    width: 100%;
+    color: #000;
+    padding: 180px 0;
+    background: url('../images/fon.png');
+    background-size: cover;
+    opacity: 1;
+    
+}
+.header__title {
+    width: 16ch;
+    color: rgb(169, 168, 168);
+    font-size: 40px;
+    font-family: monospace;
+    font-style: italic;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 4px solid #FFF;
+    animation: flashing-border 0.75s step-end infinite,
+    printed-text 4s steps(16);
+  
+}
+@keyframes flashing-border {
+    
+        0% {
+            border-color: #770909;
+        }
+        50% {
+            border-color: transparent;
+        }
+        100% {
+            border-color: #770909;
+        }
+    }
+@keyframes printed-text {
+        from {
+            width: 0;
+        }
+    }
+
+.header__desc {
+    font-size: 50px;
+    text-transform: uppercase;
+    color: #770909;
+}
+.header__text {
+    font-size: 14px;
+    color: rgb(169, 168, 168);
+    margin-bottom: 50px;
+}
+.button {
+    font-size: 20px;
+    text-transform: uppercase;
+    padding: 10px 25px;
+    margin: 0 5px;
+    color: #000;
+    transition: 0.3s;
+    border-radius: 4px;
+}
+.button_empty {
+    background: transparent;
+    border: 2px solid #770909;
+}
+.button_full {
+    color: #aeaeae;
+    background: #770909;
+    border: 2px solid #000000;
+}
+.button_empty:hover, 
+.button_full:hover {
+    background: #b30f0f;
+    cursor: pointer;
+}
+/* ___СЕРВИС___ */
+.service {
+    color: #000;
+    background: #FFF;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+ .service__title {
+    font-size: 50px;
+    font-weight: bold;
+    padding-bottom: 100px;
+    text-transform: uppercase;
+}
+.service__desc {
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+}
+.service__desc-1 {
+    font-size: 16px;
+}
+.col-xl-3 {
+    margin-left: 50px;
+  }
+  .card {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    perspective: 1000px;
+  }
+  .front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+    transition: .3s;
+    backface-visibility: hidden;
+    border-radius: 10px;
+  }
+  .front {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .front h3 {
+    text-transform: uppercase;
+  }
+  .back {
+    background: linear-gradient(300deg, #95f1fb 50%, #770909 50%);
+    background-size: 300%;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+  }
+  .card:hover .front {
+    background-position: 100% 0;
+    transform: rotateY(180deg);
+    }
+  .card:hover .back {
+    background-position: 100% 0;
+    transform: rotateY(360deg);
+    }
+
+/* ___ПОРТФОЛИО___ */
+.portfolio {
+   display: flex;
+   height: 100vh;
+   position: relative;
+}
+.portfolio__cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/fon_port.jpg') no-repeat center;
+    background-size: cover;
+    z-index: 3;
+}
+.portfolio__text {
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+    text-transform: uppercase;
+}
+.overlay {
+    width: 1%;
+    height: 100%;
+    position: relative;
+    z-index: 4;
+    background: url('../images/fon_port-2.jpg') no-repeat center;
+    background-attachment: fixed;
+    transition: 5.2s ease;
+}
+.overlay:hover {
+    transition: 0s linear;
+    opacity: 0;
+
+}
+
+/*___Services___ */
+
+.services {
+    background: #FFF;
+    color: #000;
+    text-align: center;
+}
+.services__title {
+    font-size: 50px;
+    font-weight: bold;
+    padding-bottom: 100px;
+    padding-top: 120px;
+    text-transform: uppercase;
+}
+
+.our_card {
+    border-radius: 5px;
+    padding: 50px 40px 50px;
+    margin-bottom: 50px;
+    
+}
+.our_card:hover {
+    transition: .3s;
+    border-radius: 0px 10px 10px 0px;
+    box-shadow: -2px 6px 20px 0px rgba(0,0,0,0.75);
+}
+.services__icon {
+    width: 40px;
+    color: black;
+
+}
+
+.services-button {
+    text-transform: uppercase;
+    border: 1px solid black;
+    background: transparent;
+    padding: 14px 12px 14px;
+}
+.services-button:hover {
+    background: rgb(0, 255, 238);
+    transition: .3s;
+}
+/* Футер */
+.footer {
+    color: #fff;
+    margin-bottom: 50px;
+}
+.title-footer {
+    color: black;
+    padding: 30px 30px;
+    text-align: center;
+}
+.form {
+    text-align: center;
+}
+.form__input {
+    background: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    width: 580px;
+    padding: 14px 0;
+    margin-right: 10px;
+    border: 0;
+    padding-left: 23px;
+    outline: none;
+}
+.form__button {
+    background: #770909;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 5px;
+    width: 126px;
+    border: 0;
+    padding: 14px 0;
+    cursor: pointer;
+    outline: none;
+}
+/* ___СУПЕРФУТЕР___ */
+.superfooter {
+    padding: 20px 0 50px;
+
+}
+.credits {
+    color: #fff;
+    font-size: 16px;
+    width: 184px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Медиа-запросы */
+@media screen and (max-width: 1200px) {
+    .logo {
+        
+    }
+    .menu-bar {
+        display: none;
+    }
+    .header {
+        
+        align-items: center;
+        justify-content: center;
+        position: none;
+    }
+    .portfolio {
+        display: none;
+    }
+    .col-xl-3 {
+        margin: 0;
+        padding-bottom: 50px;
+        align-items: center;
+        justify-content: center;
+    }
+    .service {
+
+    }
+    .card {
+        margin: 0;
+        padding: 0;
+
+    }
+}
