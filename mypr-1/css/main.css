@@ -338,12 +338,14 @@ ul, li {
 }
 .credits {
     color: #fff;
-    font-size: 16px;
-    width: 184px;
     margin: 0 auto;
     text-align: center;
 }
-
+.soc-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 50px;
+}
 
 
 
@@ -385,5 +387,33 @@ ul, li {
         margin: 0;
         padding: 0;
 
+    }
+}
+@media screen and (max-width: 680px) {
+    .arrowUp {
+        /* display: none; */
+    }
+    .our_card {
+        padding: 50px 0 50px;
+    }
+    .our_card:hover {
+        border-radius: 0;
+        
+    }
+    .form__input {
+        width: 100px;
+    }
+    .header__title {
+        font-size: 30px;
+    }
+    .button_full {
+        margin-top: 5px;
+    }
+    .form__button {
+        width: 80px;
+    }
+    .soc-icon {
+        margin: 0;
+        padding: 0;
     }
 }
